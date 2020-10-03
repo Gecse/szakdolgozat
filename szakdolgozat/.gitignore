@@ -4,7 +4,10 @@
 *.log
 *.out
 *.pdf
+!images/*.pdf
 *.gz
 *.thm
 *.toc
-
+*.fls
+*.fdb_latexmk
+*.synctex(busy)
