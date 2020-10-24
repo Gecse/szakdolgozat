@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>HelloCode.Environment.TestRunner.Common</RootNamespace>
+    <AssemblyName>HelloCode.Environment.TestRunner.Common</AssemblyName>
+  </PropertyGroup>
+
+</Project>

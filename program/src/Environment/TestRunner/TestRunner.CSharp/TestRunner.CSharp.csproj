@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>HelloCode.Environment.TestRunner.CSharp</RootNamespace>
+    <AssemblyName>HelloCode.Environment.TestRunner.CSharp</AssemblyName>
+    <IsTestProject>false</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+        <PackageReference Include="Humanizer.Core" Version="2.8.2" />
+        <PackageReference Include="Microsoft.Build.Locator" Version="1.2.6" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.5.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="3.5.0" />
+        <PackageReference Include="Serilog" Version="2.9.0" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="xunit.extensibility.execution" Version="2.4.1" />
+        <PackageReference Include="xunit.runner.utility" Version="2.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Assets Include="Assets/**" />
+        <Compile Remove="@(Assets)" />
+        <EmbeddedResource Include="@(Assets)" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestRunner.Common\TestRunner.Common.csproj" />
+  </ItemGroup>
+
+</Project>
