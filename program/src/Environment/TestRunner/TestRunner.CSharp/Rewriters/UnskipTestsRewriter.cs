@@ -14,9 +14,7 @@ namespace HelloCode.Environment.TestRunner.CSharp.Rewriters
             return base.VisitAttributeArgument(node);
         }
 
-        private static bool IsSkipAttributeArgument(AttributeArgumentSyntax node)
-        {
-            return node.NameEquals?.Name.ToString() == "Skip";
-        }
+        private static bool IsSkipAttributeArgument(AttributeArgumentSyntax node) =>
+            node.NameEquals?.Name.ToString() == "Skip";
     }
 }

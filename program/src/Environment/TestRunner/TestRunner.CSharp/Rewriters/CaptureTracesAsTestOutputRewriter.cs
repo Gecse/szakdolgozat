@@ -11,12 +11,14 @@ namespace HelloCode.Environment.TestRunner.CSharp.Rewriters
         public override SyntaxNode VisitCompilationUnit(CompilationUnitSyntax node)
         {
             if (node.DescendantNodes().Any(IsTestClass))
+            {
                 return base.VisitCompilationUnit(
                     node.WithUsings(
                         node.Usings.Add(
                             UsingDirective(QualifiedName(
                             IdentifierName("Xunit").WithLeadingTrivia(Space),
                             IdentifierName("Abstractions"))))));
+            }
 
             return base.VisitCompilationUnit(node);
         }
@@ -24,6 +26,7 @@ namespace HelloCode.Environment.TestRunner.CSharp.Rewriters
         public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             if (IsTestClass(node))
+            {
                 return base.VisitClassDeclaration(
                     node.WithBaseList(
                             BaseList(
@@ -51,6 +54,7 @@ namespace HelloCode.Environment.TestRunner.CSharp.Rewriters
                                                 IdentifierName("output"))))))
                             .WithBody(
                                 Block()))));
+            }
 
             return base.VisitClassDeclaration(node);
         }
@@ -64,6 +68,7 @@ namespace HelloCode.Environment.TestRunner.CSharp.Rewriters
                 if (memberAccess.EndsWith("Console.Write") ||
                     memberAccess.EndsWith("Console.Error.Write") ||
                     memberAccess.EndsWith("Console.Out.Write"))
+                {
                     return node.WithExpression(
                         MemberAccessExpression(
                             SyntaxKind.SimpleMemberAccessExpression,
@@ -75,10 +80,12 @@ namespace HelloCode.Environment.TestRunner.CSharp.Rewriters
                                     IdentifierName("Diagnostics")),
                                 IdentifierName("Trace")),
                             IdentifierName("Write")));
+                }
 
                 if (memberAccess.EndsWith("Console.WriteLine") ||
                     memberAccess.EndsWith("Console.Error.WriteLine") ||
                     memberAccess.EndsWith("Console.Out.WriteLine"))
+                {
                     return node.WithExpression(
                         MemberAccessExpression(
                             SyntaxKind.SimpleMemberAccessExpression,
@@ -90,6 +97,7 @@ namespace HelloCode.Environment.TestRunner.CSharp.Rewriters
                                     IdentifierName("Diagnostics")),
                                 IdentifierName("Trace")),
                             IdentifierName("WriteLine")));
+                }
             }
 
             return base.VisitInvocationExpression(node);

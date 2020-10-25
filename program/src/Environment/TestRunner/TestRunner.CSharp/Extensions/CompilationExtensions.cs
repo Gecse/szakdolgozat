@@ -7,20 +7,14 @@ namespace HelloCode.Environment.TestRunner.CSharp.Extensions
 {
     internal static class CompilationExtensions
     {
-        internal static bool HasErrors(this Compilation compilation)
-        {
-            return compilation.GetDiagnostics().Any(IsError);
-        }
+        internal static bool HasErrors(this Compilation compilation) =>
+            compilation.GetDiagnostics().Any(IsError);
 
-        internal static Diagnostic[] GetErrors(this Compilation compilation)
-        {
-            return compilation.GetDiagnostics().Where(IsError).ToArray();
-        }
+        internal static Diagnostic[] GetErrors(this Compilation compilation) =>
+            compilation.GetDiagnostics().Where(IsError).ToArray();
 
-        private static bool IsError(Diagnostic diagnostic)
-        {
-            return diagnostic.Severity == DiagnosticSeverity.Error;
-        }
+        private static bool IsError(Diagnostic diagnostic) =>
+            diagnostic.Severity == DiagnosticSeverity.Error;
 
         internal static Assembly ToAssembly(this Compilation compilation)
         {

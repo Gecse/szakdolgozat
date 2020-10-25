@@ -2,19 +2,19 @@
 {
     internal static class StringExtensions
     {
-        internal static string NormalizeNewlines(this string str)
+        public static string NormalizeNewlines(this string input)
         {
-            if (str == null || str == string.Empty)
+            if (string.IsNullOrWhiteSpace(input))
                 return null;
 
-            str = str.Replace("\r\n", "\n")
+            input = input.Replace("\r\n", "\n")
                     .Replace("\r", string.Empty)
                     .Trim();
 
-            if (string.IsNullOrWhiteSpace(str))
+            if (string.IsNullOrWhiteSpace(input))
                 return null;
 
-            return str;
+            return input;
         }
     }
 }

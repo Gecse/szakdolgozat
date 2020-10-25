@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using HelloCode.Environment.TestRunner.CSharp.Models;
@@ -9,27 +7,29 @@ namespace HelloCode.Environment.TestRunner.CSharp.IntegrationTests.Helpers
 {
     internal static class TestRunResultReader
     {
-        public static TestRun ReadExpected(TestOptions options)
+        public static TestRun ReadExpected(Options options)
         {
             return ReadTestRunResult(options, "expected_results.json");
         }
 
-        private static TestRun ReadTestRunResult(TestOptions options, string fileName)
+        private static TestRun ReadTestRunResult(Options options, string fileName)
         {
             var testRunResult = DeserializeTestRunResult(options, fileName);
 
-            static int Comparison(TestResult x, TestResult y) => string.Compare(x.Name, y.Name, StringComparison.Ordinal);
-            testRunResult.Tests.Sort(Comparison);
+            testRunResult.Tests.Sort(TestResult.Comparison);
 
             return testRunResult;
         }
 
-        private static TestRun DeserializeTestRunResult(TestOptions solution, string fileName)
+        private static TestRun DeserializeTestRunResult(Options solution, string fileName)
         {
-            return JsonSerializer.Deserialize<TestRun>(File.ReadAllText(Path.Combine(solution.Directory, fileName)), CreateJsonSerializerOptions());
+            var text = File.ReadAllText(Path.Combine(solution.Directory, fileName));
+            var options = GetJsonSerializerOptions();
+
+            return JsonSerializer.Deserialize<TestRun>(text, options);
         }
 
-        private static JsonSerializerOptions CreateJsonSerializerOptions()
+        private static JsonSerializerOptions GetJsonSerializerOptions()
         {
             var options = new JsonSerializerOptions
             {

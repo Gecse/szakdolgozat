@@ -1,14 +1,13 @@
 ﻿namespace HelloCode.Environment.TestRunner.CSharp.Models
 {
-    public class TestOptions
+    public class Options
     {
         public string Name { get; }
-
         public string Directory { get; }
 
-        public TestOptions(string slug, string directory)
+        public Options(string name, string directory)
         {
-            (Name, Directory) = (slug, directory);
+            (Name, Directory) = (name, directory);
         }
     }
 }
