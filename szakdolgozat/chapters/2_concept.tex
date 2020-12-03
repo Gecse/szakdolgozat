@@ -103,6 +103,140 @@ Minden keretrendszerben elérhető egy \texttt{Assert} osztály, amivel állít�
 % Ez szoftverek esetében a hasonló alkalmazások bemutatását, táblázatos formában történő összehasonlítását jelentheti.
 % Szerepelhetnek képek és észrevételek a viszonyításként bemutatott alkalmazásokhoz.
 
+Ebben az alfejezetben a szakdolgozat témájához kapcsolódó, aktuálisan elérhető hasonló szoftverek és alkalmazások kerülnek bemutatásra.
+
+Napjainkban nagyon elterjedt lett a tesztvezérelt fejlesztés, és a tesztvezérelt oktatás pedig ebből a módszerből fejlődött ki. Ez egy rendkívül felkapott témakör, több cég építette már ki erre a teljes portfólióját, és rengeteg weboldal, alkalmazás készült már ami a manuális, emberi erőforrásokon alapuló programozás oktatást szeretné leváltani, megkönnyíteni azáltal, hogy egy teljesen automatizáltan működő tanulóprogramot ad a programozást tanulni kívánók kezébe.
+
+\SubSection{Mester}
+
+A Mester egy ingyenesen használható online programozási feladatbank. Ez az Eötvös Lóránd Tudományos Egyetem Informatikai Karának egyik rendszere. \cite{elte-mester} A Mester mindenki számára elérhető egy ingyenes regisztráció után, viszont létezik egy Biró nevű változata, amit csak a karon tanuló hallgatók érhetnek el zárthelyi dolgozatok és beadandó feladatok megírásához. \cite{elte-biro}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/mester.png}
+    \caption{Az Mester főoldala.}
+    \label{fig:mester}
+\end{figure}
+
+A Mesteren rengeteg programozási feladat található, mind magyarul és mind bekategorizálva.
+
+A feladatokat a következőképpen érhetjük el:
+\begin{enumerate}
+    \item Szintválasztás
+
+          Itt választhatunk kezdő, középhaladó illetve haladó szint közül. Ezenkívül még elérhető két versenyre felkészítő szint is: OKTV és diákolimpia.
+
+    \item Témaválasztás
+
+          A kezdő szinten belül például a programozási tételek vannak felbontva témákra.
+
+          Középhaladó szinten érettségi feladatokat és egyedi tematizált feladat témaköröket (például: időjárás, verseny) találunk.
+
+          Haladó szinten pedig rekurzióval foglalkozó, különféle algoritmusokkal, gráfokkal foglalkozó témaköröket találunk.
+
+          Minden témához tartozik egy kidolgozott mintafeladat pszeudokódos, C++ illetve Pascal nyelven elérhető megoldással. Illetve a témakiválasztását követően találunk a főoldalon egy témaleírást amihez egy példa \aref{fig:mester} ábrán tekinthető meg.
+
+    \item Feladatválasztás
+
+          Itt magát a témán belüli feladatot választhatjuk ki.
+\end{enumerate}
+
+Kiválasztás után a feladatunkat PDF formátumban kapjuk meg, ebben megtaláljuk a feladatleírást, szöveges leírást arról, hogy milyen bemenetet és kimenetet vár el a feladatellenőrző, illetve ezekre kapunk 2-2 példát is. Ezenkívül a lap alján megtaláljuk a programunk futására megengedett időlimitet és a memórialimitet, amikhez optimalizálnunk kell a megoldásunkat.
+
+Miután elkészítettük a megoldásunkat, azt feltölthetjük a weboldalra és a Mester feladatellenőrző modulja ellenőrzi azt. A modul képes ellenőrizni a programunk helyességét, illetve lefordítja és különféle bemenetekkel érkezett kimeneteket összehasonlít a letárolt megoldásokkal.
+
+A Mester jelenleg 6 programozási nyelvet támogat. Ezek a következők: \cite{elte-mester_tudnivalok}
+\begin{itemize}
+    \item C és C++ (gcc 5.4.0)
+    \item C\# és Visual Basic (mono 4.6.2)
+    \item Java (jdk 1.8)
+    \item Pascal (FreePascal 3.0.0)
+    \item Python (cython 3.5)
+\end{itemize}
+
+Egy kisebb korlátozás a weboldalban, hogy programunkat az adott feladathoz csak limitált számmal tölthetjük fel, ezt a feladat készítője határozza meg. A legtöbb feladat esetében 20 próbálkozásunk áll rendelkezésünkre. Ez ösztönzi a tanulót arra, hogy a saját számítógépén próbálja meg a minta be- és kimenettel a programját, és csak akkor töltse fel, ha már azokra jól működik.
+
+A tesztelés filozófiáját a Mester Gyakran ismételt kérdéseik aloldala a következőképpen fogalmazza meg:
+\begin{quotation}
+    \textsl{,,A feltöltött (tesztelendő) programot első lépésben lefordítja a megjelölt nyelv fordítóprogramjával. Ha a fordítás sikertelen, akkor vége. Második lépésben egy védett környezetben (figyelve az erőforrás korlátokat; memória és CPU idő) előre elkészített bemenetekre futtatja. Ha időlimiten belül szabályosan (0 kilépési kóddal) fejeződik be a futtatás, akkor a kapott kimenet helyességét ellenőrzi.''} \cite{elte-mester_gyik}
+\end{quotation}
+A megoldásunk pontozása egy 0-tól 100-ig terjedő skálán történik. A feladatok pontozását a feladat készítője határozza meg, ezt a feladatleírásban olvashatjuk el.
+
+A weboldalon láthatjuk még az előző feladataink pontjait, a feladatellenőrző modul üzenetét és a futási időt is. Ugyanitt letölthetjük az előző megoldásaink kódját is.
+
+A programunkban csak a standard függvénykönyvtárak használhatóak, és a platformspecifikus könyvtárak le vannak tiltva (ilyen például a Windows grafikus könyvtár). A programba értékek betöltése a standard bemenetről való beolvasással történik, és az eredmények kiíratása pedig a standard kimenetre való írásával. Ez azt jelenti, hogy a Mester nem használja a tesztvezérelt fejlesztéshez javasolt egységtesztelő könyvtárakat.
+
+\SubSection{CodeWars}
+
+A CodeWars egy gamifikált programozást oktató weboldal, ahol több mint 50 programozási nyelvből választhatunk a több mint 9000 feladat megoldásához. \cite{codewars}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/codewars_homepage.png}
+    \caption{A CodeWars főoldala.}
+    \label{fig:codewars_homepage}
+\end{figure}
+
+A legnépszerűbb nyelvek mind támogatottak, mint például a C\#, Java, JavaScript, Python, de ezenkívül akár Fortran-ban vagy CommonLisp-ben is oldhatunk meg feladatokat. \Aref{fig:codewars_homepage} ábrán látható programozási nyelvek közül válogathatunk.
+
+Az alkalmazást a Qualified nevű amerikai cég fejleszti, és a Qualified név alatt cégek interjúztatási procedúrájához is forgalmazzák a CodeWars professzionálisabbra szabott verzióját. \cite{qualified}
+
+A CodeWars teljesen gamifikált rendszer, a játék részeként egy japán stílusú felületet alakítottak ki. A rendszerben a programozási feladatokat "kata"-nak hívják. A feladatok teljesítésért, esetleges hibák javításáért és minőségi megoldások feltöltésért pedig úgy nevezett "dicsőség" (honor) pontokat és a pontok gyűjtésével rangokat kaphatunk. Más tanulók profiljait követhetjük és ők is követhetnek minket, és egymás profiljain láthatjuk az adott tanuló statisztikáit.
+
+Több mint 9000 feladat közül válogathatunk, ezek nehézség és témakör címkék szerint vannak rendezve. A nehézséget a rendszer 1-től 8 "kyu"-ig méri, a legkönnyebb feladatok a 8 "kyu" kategóriába tartoznak, és az 1 "kyu"-ig nehezednek.
+
+A feladatokat megnyitva láthatjuk a Markdown formátumban készített feladatleírást, amiben sokszor \LaTeX{} képletekkel van levezetve a matematikai rész, illetve látjuk a feladat címkéit, azt hogy, kik készítették a feladatot, és ha már 1 programozási nyelven megoldottuk akkor látjuk az ahhoz tartozó megoldásokat más tanulóktól, illetve a teszteseteket ami alapján tesztelte a rendszer a megoldásunkat.
+A megoldásokhoz hozzászólhatunk és értékelhetjük is. Ugyanezt szintén megtehetjük magával a feladattal is.
+
+Az alkalmazás a tesztvezérelt oktatás elvét követi, és a Mesterrel ellentéttel ez már egységtesztelő keretrendszereket használ a megoldásaink ellenőrzésére. Itt nem a standard be- és kimenet van használva, hanem a feladat megnyitásakor kapunk egy előredefiniált osztály- és metódusvázt amiben meg van adva nekünk, hogy milyen paraméterekkel lesz meghívva a metódusunk (ez a bemenet), és milyen visszatérési értéket vár (ez lesz a kimenet).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/codewars_editor.png}
+    \caption{A CodeWars kódszerkesztő felülete.}
+    \label{fig:codewars_editor}
+\end{figure}
+
+\Aref{fig:codewars_homepage} ábrán látható a CodeWars kódszerkesztő felülete, ami a CodeMirror nevű JavaScript szövegszerkesztő komponenst használja. Itt egy ablakban látjuk a feladat leírását, a korábbi megoldásainkat, és magát a kódot. Állíthatunk világos és sötét mód között, és eltüntethetjük az alkalmazás nem kívánt részeit, hogy a szerkesztőfelületünk nagyobb legyen, és akár rögtön a szerkesztőben válthatunk programozási nyelvet is, és az ahhoz tartozó fordító verziót.
+
+Ezenkívül a Mesterhez hasonlóan az alkalmazás képes szerveroldalon lefuttatni és letesztelni a kódunkat, így az egészhez csak egy böngészőre van szükségünk hiszen semmit sem kell lokálisan a saját gépünkön végezni.
+
+Korlátozás a weboldalban az, hogy egyetlen nyelven sem érhető el a kódkiegészítés funkció, így a valódi fejlesztőkörnyezetekhez képest vakon kell kódot írnunk, és gyakran olvasni kell a dokumentációt, hogy milyen lehetőségeink vannak egy nem ismert osztálynál vagy metódusnál.
+
+A tesztek lefuttatása esetén a futtatás eredményét, a tesztek kimenetét, esetleges fordítási hibákat, illetve a futási időt látjuk szerkesztőnkben.
+
+A kódunk megírása után két lehetőségünk van. \Aref{fig:codewars_editor} ábrán látható egy \textsl{Sample Tests} (minta tesztesetek) ablak, ahol a feladat készítője szolgáltatott nekünk egy minta tesztet. Ezt akár szerkeszthetjük vagy adhatjuk hozzá saját teszteseteket, mintha a tesztvezérelt fejlesztés elve szerint oldanánk meg a feladatot. A \textsl{Test} gomb a minta tesztesetek ablakban található teszteket fogja lefuttatni. Viszont a \textsl{Attempt} (beadás) gomb már a feladat készítője által írt, számunkra rejtett teszteseteket futtatja le, majd ha minden teszt sikeres akkor késznek tekinti a megoldásunkat.
+
+\SubSection{LeetCode}
+
+A LeetCode egy online, programozási problémákat és feladatok kínáló weboldal. Az oldal fő témája az állásinterjúk programozási és algoritmizáló részére való felkészítés. \cite{leetcode} Nagyban hasonlít az előzőleg már említett CodeWars-hoz, de magáról az oldal hátteréről vagy működéséről kevés információ érhető el.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/leetcode_problems.png}
+    \caption{A LeetCode főoldala, és a megoldható feladatok kilistázva.}
+    \label{fig:leetcode_problems}
+\end{figure}
+
+Az oldalon több mint 1600 feladat található meg, amiket 15 különböző nyelven oldhatunk meg. Több kategória is létezik az oldalon, a legnépszerűbb Facebook, Amazon, Google és Microsoft interjú feladatokhoz csak havi vagy éves előfizetés után férhetünk hozzá. Ezenkívül vannak napi és havi kihívások is az oldalon. Részben ez is gamifikált rendszer, de nem erre viszi el a hangsúlyt, mint a CodeWars.
+
+A feladatok csoportosítva vannak nehézség és témakör szerint, illetve láthatjuk minden feladatnak a megoldási arányait is.
+
+Rögtön elérjük az összes ingyenes feladatot, illetve azok megoldásait is. Általában többféle megoldás is fel van töltve, ezek főként Java nyelven vannak kidolgozva, de van ahol több nyelven is elérjük a példamegoldásokat.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/leetcode_editor.png}
+    \caption{A LeetCode kódszerkesztő felülete.}
+    \label{fig:leetcode_editor}
+\end{figure}
+
+A teljesen online kódszerkesztő és futtató felület nagyon egyszerű és letisztult, rögtön láthatjuk a feladatleírást, ezenkívül külön menüpontban elérhetőek a mintamegoldások, hozzászólás szekció és a korábbi megoldásaink. Szokásosan jobb oldalt kapott helyet a kódszerkesztő komponens, ami itt is a CodeMirror nevű JavaScript könyvtárt használja. Itt válthatunk a 15 különböző nyelv között, persze a legnépszerűbb nyelvek elérhetők mint például a C\#, Java, JavaScript vagy a Python 2 és 3. A kódkiegészítés prémium funkcióként elérhető ezeknél a nyelveknél, viszont ezekre az előbb is említett fizetős csomagra kell váltanunk. C\#-nál a fizetős csomagban sem érhető el sajnos a kódkiegészítés.
+
+Ez az oldal is a tesztvezérelt oktatás elvén működik és egységtesztelő keretrendszert használ a megoldásaink kiértékelésére. Itt nem a standard be- és kimeneteket kell használnunk, hanem a paraméterekkel és kimeneti értékkel kommunikálunk.
+
+Látható még egy minta teszteset, amit az előző oldalakhoz hasonlóan módosíthatunk és akár bővíthetjük is, és a program lefutása után a futási üzenetet is megkapjuk. Prémium funkcióként elérhető a hibakereső (debugger) felület is.
+
 \Section{Követelmény specifikáció}
 
 % Külön szakaszban érdemes részletesen kitérni az elkészítendő alkalmazással kapcsolatos követelményekre.
