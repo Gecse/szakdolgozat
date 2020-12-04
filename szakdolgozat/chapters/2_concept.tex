@@ -237,6 +237,61 @@ Ez az oldal is a tesztvezérelt oktatás elvén működik és egységtesztelő k
 
 Látható még egy minta teszteset, amit az előző oldalakhoz hasonlóan módosíthatunk és akár bővíthetjük is, és a program lefutása után a futási üzenetet is megkapjuk. Prémium funkcióként elérhető a hibakereső (debugger) felület is.
 
+\SubSection{Exercism}
+
+Az Exercism egy online, ingyenes, nyílt forráskódú programozási platform, ami kódolási gyakorlást és mentorálást igér mindenkinek. Az oldalon több mint 3000 feladatot oldhatunk meg 52 különböző nyelven. \cite{exercism}
+
+A legnépszerűbb nyelvek mind támogatottak, mint például a C\#, Java, JavaScript, Python, de ezenkívül akár x86-64 assembly-ben vagy Prolog-ban is oldhatunk meg feladatokat.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/exercism_homepage.png}
+    \caption{Az Exercism főoldala.}
+    \label{fig:exercism_homepage}
+\end{figure}
+
+Ez az oldal abban tér el a többitől, hogy nem kínálnak online kódszerkesztési lehetőséget, hanem valós életbeli projekteket szimulálva kínálnak egy saját fejlesztésű parancssoros klienst, amivel a feladatokat lokálisan letöltve tudjuk megoldani és ellenőrizni a tesztekkel. Ez arra is biztatja a tanulókat, hogy megtanuljanak egy kódszerkesztőt vagy integrált fejlesztői környezetet és magát a parancssort magabiztosan használni, ezen tudásukat később pedig újrahasznosíthatják valós életbeli projekteknél.
+
+A kliens lehetőséget nyújt arra, hogy a megoldásaikat feltöltsék az Exercism rendszerébe ezáltal a mentorok át tudják tekinteni és értékelni. A mentorok önkéntesek és teljesen ingyenesen segítenek mindenkinek.
+
+A feladatok programozási nyelvek szerint kurzusokba vannak csoportosítva, és minden kurzus 40-100 feladatot tartalmaz. A kurzusokon belül könnyű--közepes--nehéz nehézségi szint alapján vannak csoportosítva a feladatok, illetve konkrét programozási fogalmak szerint is fel vannak címkézve azok (például: tömbök, osztályok, string-ek).
+
+Egy feladatot megnyitva láthatjuk azon leírását, ami itt is szintén Markdown formátumban van megadva, és időnként \LaTeX{} kódot is tartalmaz. Miután a feladatot a parancssoros kliens segítségével letöltjük, megkapjuk azt egy projekt formájában, ami tartalmaz egy kiinduló programkódot az osztály és metódusdefiníciókkal, illetve egy teszteseteket tartalmazó fájlt. A teszteket a programozási nyelv hagyományos módján tudjuk lefuttatni, mivel a tesztesetek minden esetben egy egységtesztelő keretrendszerrel vannak írva. A kurzusok biztatják a felhasználót a tesztvezérelt fejlesztésre, alapértelmezetten az összes feladatnál csak az első teszteset van engedélyezve, a többit a tanulónak kell engedélyezni a fejlesztés során.
+
+A feladat specifikációi egy közös, nyelvfüggetlen metaadatbankban vannak tárolva, és ezen kanonikus adatok alapján adott nyelvi generátor programokkal generálják a programozási nyelvekhez a teszteseteket. \cite{exercism_problem-specifications} \cite{exercism_csharp-generator}
+
+\SubSection{HackerRank}
+
+A HackerRank egy kompetitív programozási kihívásokat, feladatokat kínáló weboldal, amelyen a fejlesztők egymással mérkőzhetnek meg a feladatok megoldásával. Az oldal a szokványos algoritmizáló és interjúztatási feladatokon kívül a számítógép-tudomány több ágáról is biztosít feladatokat, ilyenek többek között a mesterséges intelligencia, funkcionális programozás, adatbázisok-adatstruktúrák és a gépi tanulás. \cite{hackerrank} \cite{hackerrank_faq}
+
+Az oldalon több mint 40 nyelven oldhatnak meg feladatokat a fejlesztők, ezek között elérhető a C++, Python, Java több verziója illetve JavaScript, C\# is. \cite{hackerrank_environment}
+
+A feladatok a témakör vagy programozási nyelv szerinti csoportosításban szerepelnek, ezenbelül szűrhetünk még altémákra és nehezségi szintre is. A Project Euler-féle szöveges, matematikával kapcsolatos programozási feladatok is elérhetőek az oldalon teljesen automatizáltan tesztelhető formában is.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/hackerrank_task.png}
+    \caption{Egy HackerRank-on található feladat leírása.}
+    \label{fig:exercism_task}
+\end{figure}
+
+A feladatok leírása Markdown és MathJax segítségével vannak megjelenítve.
+
+A weboldal igaz nem nyílt forráskódú, de a legújabb technológiákat veszi, ilyen például a Monaco kódszerkesztő komponens, amit a Microsoft fejleszt a Visual Studio Code nevű fejlesztőkörnyezethez. Ezáltal elérhető minden nyelvhez az automatikus kódkiegészítés.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/hackerrank_editor.png}
+    \caption{A HackerRank kódszerkesztő felülete.}
+    \label{fig:hackerrank_editor}
+\end{figure}
+
+A kódszerkesztőben elérhető világos, sötét, illetve nagy kontrasztú mód is, ezenkívül átválthatunk teljes képernyős szerkesztési módba is. Sajnos azt nem lehet állítani, hogy a szerkesztő és a feladatleírás ne egymás alatt legyen, hanem egymás mellett mint az előzőleg bemutatott oldalakon.
+
+Ez az alkalmazás is teljesen automatizáltan a böngészőből működik, viszont nem bemeneti argumentumokkal és visszatérési értékekkel kell operálnunk hanem a standard ki- és bemenetet kell használni.
+
+Az oldalon található egy információk szekció ahol szépen le van vezetve, hogy az adott nyelven milyen idő- és memóriakorlát van bevezetve, milyen verziójú fordítót használ a szerver és milyen függvénykönyvtárakat érünk el. C\# esetén Mono 6.4 fordítót használ a rendszer amivel a .NET Framework 4.7.2 funkcióit érjük el, és 3 másodperc időkorlát, 512 MB memóriakorlát van jelen. Függvénykönyvtárak esetén a Newtonsoft által készített JSON könyvtárat és a Microsoft által karbantartott HttpClient és WebClient könyvtárakat érjük el. JavaScript esetén a Node.js 10-es verziójához férünk hozzá, itt egy növelt 10 másodperces időkorlát és szintúgy 512 MB memóriakorlát érhető el. Függvénykönyvtárak esetében pedig a következőkhöz férünk hozzá: bignumber.js, jquery, lodash, underscore, request, axios. A programjaink egy virtualizált 64-bites Ubuntu rendszeren futnak, és minden nagyobb nyelven elérhető a több szálon való futtatás, az időkorlátban ez is figyelembe van véve. \cite{hackerrank_environment}
+
 \Section{Követelmény specifikáció}
 
 % Külön szakaszban érdemes részletesen kitérni az elkészítendő alkalmazással kapcsolatos követelményekre.
