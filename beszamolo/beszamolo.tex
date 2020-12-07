@@ -1,0 +1,43 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[paperwidth=210mm,paperheight=297mm,headheight=15.2pt,headsep=7.1mm,top=25mm,bottom=25mm,inner=30mm,outer=25mm,dvips]{geometry}
+
+\frenchspacing
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+\usepackage{parskip}
+
+\title{\textbf{Szakdolgozatkészítés I. -- féléves beszámoló}}
+\author{Streba Dániel (\texttt{H0SRE6})}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    A félév elején Piller Imre tanár urat választottam témavezetőmek, akinek több érdekes témát is felvetve majd átbeszélve végül a \emph{Tesztvezérelt programozás oktatás} nevű szakdolgozattémát választottam. 
+    
+    A félév során sajnos a pandémia miatt a magamtól vártnál lassabb tempóban tudtam haladni, viszont Piller tanár úr teljesen megértő volt és mindenben segítőkész.
+
+    E félévben sikerült elkészítenem a program kódfuttató és kódelemző moduljának prototípusát, amivel a C\# fordító- és futtatókörnyezet rejtelmeibe ástam bele magam, ezenkívül a szoftvertesztelés, tesztvezérelt fejlesztés és architekturális felépítés témakörében is több szakirodalomba vetettem bele magamat azon indokból, hogy a megszerzett tudást fel tudjam használni a dolgozat keretében. Kidolgoztam vázlatszerűen, hogy a programban megoldható oktatófeladatoknak és az ahhoz tartozó teszteseteknak milyen struktúrával kell rendelkezniük, és milyen metaadatokat kell tárolnunk melléjük.
+
+    A dolgozat dokumentációs részeként eddig sikerült elkészíteni az irodalomkutatást és a piackutatást a Koncepció fejezetben. Ezeken kívül pedig dolgozom jelenleg a felhasznált technológia bemutatásán, illetve a követemény specifikáción, a program és az adatbázis megtervezésén. A piackutatás kidolgozása közben rengeteg ötletet kaptam amivel lehetne javítani az eredeti elképzeléseimet a dolgozat keretében elkészítendő alkalmazást.
+    
+    \subsection*{Ötletek, tervezett lépések}
+
+    Az alkalmazás Angular és ASP.NET Core technológiákkal készülne. A szakdolgozat fejlesztési fázisának első lépése az lenne, hogy kitaláljuk majd lefejlesztjük milyen módon lehet a C\# környezetben programmatikus módon előre meghatározott egységteszteket futtatni a felhasználótól megkapott forráskódra. A megkapott forráskód programozási nyelve akár lehet C\#, vagy más is, ha van idő rá és ha a kódot sikerül megfelelően absztraktálni akkor lehetne implementálni egy második nyelvet is, akár JavaScript/TypeScript vagy C/C++.
+
+    A egységteszt alapú ellenőrzéshez az egységteszteket és a hozzátartozó adatokat kellene tárolni. A hozzátartozó adatok alatt értem:
+    \begin{itemize}
+        \item egy optimális megoldást (ami a kitöltő számára nem látszik),
+        \item egy programvázat, ami a metódusok prototípusát (név, argumentumok, visszatérési érték) és esetlegesen a használt függvénykönyvtárakat tartalmazná és,
+        \item egy feladatleírást.
+    \end{itemize}
+    A fejlesztési fázis második lépése az lenne, hogy készítünk hozzá egy ASP.NET backend-et és egy Angular frontend-et. Arra gondoltam, hogy lehetne tanárként és diákként is belépni a rendszerbe. Tanár jogosultsággal új feladatokat tölthetünk fel és oszthatunk ki csoportok/tankörök számára. Diákként pedig a hozzánk rendelt feladatokat látnánk és a korábbi feladatainkat.
+
+    A forráskód esetén lefutnak az egységtesztek és különböző statisztikák kiértékelése is megtörténik. A kitöltő megkapja az egységteszt lefutása után a naplófájlt szépen formázva, csak a számára fontos adatokkal. Például hány teszt volt sikeres, milyen kivételt dobott a kódja, stb. Lehetne korlátozni a futási időt, és használható memóriát is. A program tudna neki segíteni hogy ha valamilyen nem szükséges függvénykönyvtárt használ, vagy túl hosszú egy metódusa. Valamilyen algoritmussal lehetne pontozni és százalékolni a beküldött feladatot. Többszöri feltöltés esetén látná hogy az előzőekhez képest mennyit tudott javítani.
+
+
+\end{document}
