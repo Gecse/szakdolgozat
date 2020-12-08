@@ -19,7 +19,7 @@
 
 \SubSection{Egységtesztelés}
 
-Az egységtesztelés (unit testing) a szoftvertesztelés egy olyan módszere, amely során a forráskód legalacsonyabb szintű, a programot felépítő egységeket tesztelik. A szoftvertesztelés szintjei \aref{fig:software_testing_levels}. ábrán látható. Az egység egy rendszer legkisebb önálló egységként tesztelhető része. Az egységtesztekkel ellenőrizhető, hogy egy egység az elvárásoknak megfelelően működik. Egy egység függvényeiről ellenőrizzük, hogy különböző bemenetek esetén megfelelő eredményt, vagy hibát produkálnak. Az egységeket egymástól függetlenítve kell tesztelni.
+Az egységtesztelés (\emph{unit testing}) a szoftvertesztelés egy olyan módszere, amely során a forráskód legalacsonyabb szintű, a programot felépítő egységeket tesztelik. A szoftvertesztelés szintjei \aref{fig:software_testing_levels}. ábrán látható. Az egység egy rendszer legkisebb önálló egységként tesztelhető része. Az egységtesztekkel ellenőrizhető, hogy egy egység az elvárásoknak megfelelően működik. Egy egység függvényeiről ellenőrizzük, hogy különböző bemenetek esetén megfelelő eredményt, vagy hibát produkálnak. Az egységeket egymástól függetlenítve kell tesztelni.
 
 \begin{figure}[h]
     \centering
@@ -36,9 +36,9 @@ Napjainkban a legnépszerűbb egységteszt keretrendszerek mind az xUnit keretre
 
 \SubSection{Tesztvezérelt fejlesztés}
 
-A tesztvezérelt fejlesztés (Test-driven Development, TDD) napjaink egyik legismertebb szoftverfejlesztési folyamata a professzionális programozásban. Ez a folyamat nagyon rövid fejlesztési ciklusokon alapul: a követelmények nagyon specifikus tesztesetekként vannak megfogalmazva, a kódot pedig ahhoz mérten írjuk, hogy az át fog így menni a teszten. Ez teljes ellentettje a hagyományos szoftverfejlesztésnek, mivel az megengedi azon kódrészleteket is, amelyek nem felelnek meg a követelményeknek teljesen.
+A tesztvezérelt fejlesztés (\emph{Test-driven Development}, \emph{TDD}) napjaink egyik legismertebb szoftverfejlesztési folyamata a professzionális programozásban. Ez a folyamat nagyon rövid fejlesztési ciklusokon alapul: a követelmények nagyon specifikus tesztesetekként vannak megfogalmazva, a kódot pedig ahhoz mérten írjuk, hogy az át fog így menni a teszten. Ez teljes ellentettje a hagyományos szoftverfejlesztésnek, mivel az megengedi azon kódrészleteket is, amelyek nem felelnek meg a követelményeknek teljesen.
 
-Az egységteszteléshez hasonlóan ez is Kent Beck-től ered. Őt tartjuk számon a technika kifejlesztéséért, és újrafelfedezésért. Beck a tesztvezérelt fejlesztésről először egy régi programozásról szóló könyvben olvasott, majd amikor megírta az első xUnit keretrendszert a Smalltalk nyelvben, akkor emlékezett erre, majd kipróbálta ezt saját maga is. \cite{beck_2012_tdd-rediscovery} A tesztvezérelt fejlesztés folyamatát az extrém programozás (Extreme Programming, XP) nevű módszertan részeként tökéletesítette és ekkor vált népszerűvé ez a módszer a programozók körében.
+Az egységteszteléshez hasonlóan ez is Kent Beck-től ered. Őt tartjuk számon a technika kifejlesztéséért, és újrafelfedezésért. Beck a tesztvezérelt fejlesztésről először egy régi programozásról szóló könyvben olvasott, majd amikor megírta az első xUnit keretrendszert a Smalltalk nyelvben, akkor emlékezett erre, majd kipróbálta ezt saját maga is. \cite{beck_2012_tdd-rediscovery} A tesztvezérelt fejlesztés folyamatát az extrém programozás (\emph{Extreme Programming}) nevű módszertan részeként tökéletesítette és ekkor vált népszerűvé ez a módszer a programozók körében.
 
 \begin{figure}[h]
     \centering
@@ -51,7 +51,7 @@ A tesztvezérelt fejlesztés ciklusának \aref{fig:tdd_steps} ábrán látható 
 \begin{enumerate}
     \item \textbf{Tesztírás}
 
-          Minden új funkció fejlesztése tesztek írásával kezdődik. Minden frissíteni kívánt vagy újdonsült metódushoz írjunk egy tesztet ami röviden és tömören lefedi az új funkciót. Ehhez a fejlesztőnek tisztán értenie kell a funkció specifikációját és követelményeit. A fejlesztő ezt használati eset (use case) diagramokon vagy felhasználói történeteken (user story) keresztül értheti meg a követelményeket, majd ezek után foghat neki megírni a teszteseteket. Ezek lehetnek már meglévő tesztesetek bővítései is, ha egy meglévő funkciót bővít ki.
+          Minden új funkció fejlesztése tesztek írásával kezdődik. Minden frissíteni kívánt vagy újdonsült metódushoz írjunk egy tesztet ami röviden és tömören lefedi az új funkciót. Ehhez a fejlesztőnek tisztán értenie kell a funkció specifikációját és követelményeit. A fejlesztő ezt használati eset (\emph{use case}) diagramokon vagy felhasználói történeteken (\emph{user story}) keresztül értheti meg a követelményeket, majd ezek után foghat neki megírni a teszteseteket. Ezek lehetnek már meglévő tesztesetek bővítései is, ha egy meglévő funkciót bővít ki.
 
     \item \textbf{Tesztfuttatás}
 
@@ -78,7 +78,7 @@ A C\# programozási nyelvben nincs gyári, beépített (azaz a .NET keretrendsze
 
 Napjainkban a legnépszerűbb egységteszt keretrendszerek a következők:
 \begin{itemize}
-    \item[--] Visual Studio Unit Testing Framework (,,MSTest'')
+    \item[--] Visual Studio Unit Testing Framework azaz MSTest
     \item[--] xUnit.net
     \item[--] NUnit
 \end{itemize}
@@ -94,7 +94,7 @@ Miután telepítettük az általunk választott keretrendszert, elkezdhetünk í
 
 Nagyobb kódbázis esetén átláthatatlan ha minden tesztesetet a tesztelendő osztályba raknánk bele ezért más keretrendszereknél elvárt az, hogy az egységteszteink számára új osztályt hozzunk létre. Bevett szokás az, hogy új projektet hozunk létre ahol csak a tesztek osztályait és azok segítő osztályait tároljuk, de az is elegendő ha a meglévő projektben hozzuk létre az egységteszt osztályainkat. Az osztály létrehozása után, metódusonként írhatjuk meg a teszteseteinket. Az xUnit.net-nél erre nincs szükség, azonban javasolt, hogy elkülönítve és jól megnevezve tároljuk a teszteseteket tartalmazó osztályokat és magukat a metódusokat.
 
-Minden keretrendszerben elérhető egy \texttt{Assert} osztály, amivel állításokat tehetünk a tesztjeinkbe. Ellenőrizhetjük, hogy például a metódusunk visszatérési értéke azaz az tényleges (actual) érték megegyezik-e a várt (expected) értékkel. Ezenkívül szinte bármilyen más feltételt ellenőrizhetünk. Például, hogy a tényleges érték tartalmaz-e valamit, üres-e, a várt típusú-e vagy, hogy éppen dob-e kivételt vagy sem. A teszteset akkor kerül sikeres (pass) állapotba, ha minden állításnak megfelelt, és közben nem dobott-e a programunk le nem kezelt kivételt. Ha ezeket nem teljesíti a tesztesetünk akkor sikertelen (fail) állapotba kerül.
+Minden keretrendszerben elérhető egy \texttt{Assert} osztály, amivel állításokat tehetünk a tesztjeinkbe. Ellenőrizhetjük, hogy például a metódusunk visszatérési értéke azaz az tényleges (\emph{actual}) érték megegyezik-e a várt (\emph{expected}) értékkel. Ezenkívül szinte bármilyen más feltételt ellenőrizhetünk. Például, hogy a tényleges érték tartalmaz-e valamit, üres-e, a várt típusú-e vagy, hogy éppen dob-e kivételt vagy sem. A teszteset akkor kerül sikeres (\emph{pass}) állapotba, ha minden állításnak megfelelt, és közben nem dobott-e a programunk le nem kezelt kivételt. Ha ezeket nem teljesíti a tesztesetünk akkor sikertelen (\emph{fail}) állapotba kerül.
 
 \Section{Piackutatás}
 
@@ -181,7 +181,7 @@ A legnépszerűbb nyelvek mind támogatottak, mint például a C\#, Java, JavaSc
 
 Az alkalmazást a Qualified nevű amerikai cég fejleszti, és a Qualified név alatt cégek interjúztatási procedúrájához is forgalmazzák a CodeWars professzionálisabbra szabott verzióját. \cite{qualified}
 
-A CodeWars teljesen gamifikált rendszer, a játék részeként egy japán stílusú felületet alakítottak ki. A rendszerben a programozási feladatokat "kata"-nak hívják. A feladatok teljesítésért, esetleges hibák javításáért és minőségi megoldások feltöltésért pedig úgy nevezett "dicsőség" (honor) pontokat és a pontok gyűjtésével rangokat kaphatunk. Más tanulók profiljait követhetjük és ők is követhetnek minket, és egymás profiljain láthatjuk az adott tanuló statisztikáit.
+A CodeWars teljesen gamifikált rendszer, a játék részeként egy japán stílusú felületet alakítottak ki. A rendszerben a programozási feladatokat "kata"-nak hívják. A feladatok teljesítésért, esetleges hibák javításáért és minőségi megoldások feltöltésért pedig úgy nevezett "dicsőség" (\emph{honor}) pontokat és a pontok gyűjtésével rangokat kaphatunk. Más tanulók profiljait követhetjük és ők is követhetnek minket, és egymás profiljain láthatjuk az adott tanuló statisztikáit.
 
 Több mint 9000 feladat közül válogathatunk, ezek nehézség és témakör címkék szerint vannak rendezve. A nehézséget a rendszer 1-től 8 "kyu"-ig méri, a legkönnyebb feladatok a 8 "kyu" kategóriába tartoznak, és az 1 "kyu"-ig nehezednek.
 
@@ -205,7 +205,7 @@ Korlátozás a weboldalban az, hogy egyetlen nyelven sem érhető el a kódkieg�
 
 A tesztek lefuttatása esetén a futtatás eredményét, a tesztek kimenetét, esetleges fordítási hibákat, illetve a futási időt látjuk szerkesztőnkben.
 
-A kódunk megírása után két lehetőségünk van. \Aref{fig:codewars_editor} ábrán látható egy \textsl{Sample Tests} (minta tesztesetek) ablak, ahol a feladat készítője szolgáltatott nekünk egy minta tesztet. Ezt akár szerkeszthetjük vagy adhatjuk hozzá saját teszteseteket, mintha a tesztvezérelt fejlesztés elve szerint oldanánk meg a feladatot. A \textsl{Test} gomb a minta tesztesetek ablakban található teszteket fogja lefuttatni. Viszont a \textsl{Attempt} (beadás) gomb már a feladat készítője által írt, számunkra rejtett teszteseteket futtatja le, majd ha minden teszt sikeres akkor késznek tekinti a megoldásunkat.
+A kódunk megírása után két lehetőségünk van. \Aref{fig:codewars_editor} ábrán látható egy \emph{Sample Tests} (minta tesztesetek) ablak, ahol a feladat készítője szolgáltatott nekünk egy minta tesztet. Ezt akár szerkeszthetjük vagy adhatjuk hozzá saját teszteseteket, mintha a tesztvezérelt fejlesztés elve szerint oldanánk meg a feladatot. A \emph{Test} gomb a minta tesztesetek ablakban található teszteket fogja lefuttatni. Viszont a \emph{Attempt} (beadás) gomb már a feladat készítője által írt, számunkra rejtett teszteseteket futtatja le, majd ha minden teszt sikeres akkor késznek tekinti a megoldásunkat.
 
 \SubSection{LeetCode}
 
@@ -235,7 +235,7 @@ A teljesen online kódszerkesztő és futtató felület nagyon egyszerű és let
 
 Ez az oldal is a tesztvezérelt oktatás elvén működik és egységtesztelő keretrendszert használ a megoldásaink kiértékelésére. Itt nem a standard be- és kimeneteket kell használnunk, hanem a paraméterekkel és kimeneti értékkel kommunikálunk.
 
-Látható még egy minta teszteset, amit az előző oldalakhoz hasonlóan módosíthatunk és akár bővíthetjük is, és a program lefutása után a futási üzenetet is megkapjuk. Prémium funkcióként elérhető a hibakereső (debugger) felület is.
+Látható még egy minta teszteset, amit az előző oldalakhoz hasonlóan módosíthatunk és akár bővíthetjük is, és a program lefutása után a futási üzenetet is megkapjuk. Prémium funkcióként elérhető a hibakereső (\emph{debugger}) felület is.
 
 \SubSection{Exercism}
 
@@ -291,6 +291,66 @@ A kódszerkesztőben elérhető világos, sötét, illetve nagy kontrasztú mód
 Ez az alkalmazás is teljesen automatizáltan a böngészőből működik, viszont nem bemeneti argumentumokkal és visszatérési értékekkel kell operálnunk hanem a standard ki- és bemenetet kell használni.
 
 Az oldalon található egy információk szekció ahol szépen le van vezetve, hogy az adott nyelven milyen idő- és memóriakorlát van bevezetve, milyen verziójú fordítót használ a szerver és milyen függvénykönyvtárakat érünk el. C\# esetén Mono 6.4 fordítót használ a rendszer amivel a .NET Framework 4.7.2 funkcióit érjük el, és 3 másodperc időkorlát, 512 MB memóriakorlát van jelen. Függvénykönyvtárak esetén a Newtonsoft által készített JSON könyvtárat és a Microsoft által karbantartott HttpClient és WebClient könyvtárakat érjük el. JavaScript esetén a Node.js 10-es verziójához férünk hozzá, itt egy növelt 10 másodperces időkorlát és szintúgy 512 MB memóriakorlát érhető el. Függvénykönyvtárak esetében pedig a következőkhöz férünk hozzá: bignumber.js, jquery, lodash, underscore, request, axios. A programjaink egy virtualizált 64-bites Ubuntu rendszeren futnak, és minden nagyobb nyelven elérhető a több szálon való futtatás, az időkorlátban ez is figyelembe van véve. \cite{hackerrank_environment}
+
+\Section{Technológia}
+
+% Mivel jellemzően kutatásról vagy szoftverfejlesztésről van szó, ezért annak a jellemző elemeit, technikai részleteit itt kell bemutatni.
+% Ez tehát egy módszeres bevezetés ahhoz, hogy ha valaki nem jártas a témakörben, akkor tudja, hogy a dolgozat milyen aktuálisan elérhető eredményeket, eszközöket használt fel.
+
+\SubSection{Elmélet}
+
+\subsubsection{Tiszta architektúra}
+
+\cite{martin_2017_clean-architecture} \cite{martin_2012_the-clean-architecture}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/clean-architecture_unclebob.pdf}
+    \caption{A Robert C. Martin által készített Tiszta architektúra diagram.}
+    \label{fig:clean-architecture_unclebob}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/clean-architecture_simplified.pdf}
+    \caption{A Jason Taylor által leegyszerűsített Tiszta architektúra diagram.}
+    \label{fig:clean-architecture_simplified}
+\end{figure}
+
+\subsubsection{Parancs--lekérdezés felelősség elkülönítése}
+
+\subsubsection{Közvetítő (mediator) programtervezési minta}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/mediator_pattern.pdf}
+    \caption{A Mediator pattern diagram.}
+    \label{fig:mediator_pattern}
+\end{figure}
+
+\SubSection{Kliens}
+
+\subsubsection{Angular}
+
+\subsubsection{Bootstrap}
+
+\subsubsection{TypeScript}
+
+\subsubsection{Sass}
+
+\subsubsection{Monaco Editor}
+
+\SubSection{Szerver}
+
+\subsubsection{ASP.NET Core}
+
+\subsubsection{Entity Framework Core}
+
+\subsubsection{MediatR}
+
+\subsubsection{Roslyn}
+
+\subsubsection{xUnit.net}
 
 \Section{Követelmény specifikáció}
 
