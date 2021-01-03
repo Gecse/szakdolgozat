@@ -1,78 +1,86 @@
 \Chapter{Tervezés}
 
-Itt kezdődik a dolgozat lényegi része, úgy értve, hogy a saját munka bemutatása.
-Jellemzően ebben szerepelni szoktak blokkdiagramok, a program struktúrájával foglalkozó leírások.
-Ehhez célszerű UML ábrákat (például osztály- és szekvenciadiagramokat) használni.
+% Itt kezdődik a dolgozat lényegi része, úgy értve, hogy a saját munka bemutatása.
+% Jellemzően ebben szerepelni szoktak blokkdiagramok, a program struktúrájával foglalkozó leírások.
+% Ehhez célszerű UML ábrákat (például osztály- és szekvenciadiagramokat) használni.
 
-Amennyiben a dolgozat inkább kutatás jellegű, úgy itt lehet konkretizálni a kutatási módszertant, a kutatás tervezett lépéseit, az indoklást, hogy mit, miért és miért pont úgy érdemes csinálni, ahogyan az a későbbiekben majd részletezésre kerül.
+% Amennyiben a dolgozat inkább kutatás jellegű, úgy itt lehet konkretizálni a kutatási módszertant, a kutatás tervezett lépéseit, az indoklást, hogy mit, miért és miért pont úgy érdemes csinálni, ahogyan az a későbbiekben majd részletezésre kerül.
 
-Ebben a fejezetben az implementáció nem kell, hogy túl nagy szerepet kapjon.
-Ez még csak a tervezési fázis.
-(Nyilván ha olyan a téma, hogy magának az implementációnak a módjával foglalkozik, adott formális nyelvet mutat be, úgy a kódpéldákat már innen sem lehet kihagyni.)
+% Ebben a fejezetben az implementáció nem kell, hogy túl nagy szerepet kapjon.
+% Ez még csak a tervezési fázis.
+% (Nyilván ha olyan a téma, hogy magának az implementációnak a módjával foglalkozik, adott formális nyelvet mutat be, úgy a kódpéldákat már innen sem lehet kihagyni.)
 
-\Section{Táblázatok}
+\Section{Követelmény specifikáció}
 
-Táblázatokhoz a \texttt{table} környezetet ajánlott használni.
-Erre egy minta \aref{tab:minta}. táblázat.
-A hivatkozáshoz az egyedi \texttt{label} értéke konvenció szerint \texttt{tab:} prefixszel kezdődik.
+% Külön szakaszban érdemes részletesen kitérni az elkészítendő alkalmazással kapcsolatos követelményekre.
+% Ehhez tartozhatnak forgatókönyvek (\textit{scenario}-k).
+% A szemléletesség kedvéért lehet hozzájuk képernyőkép vázlatokat is készíteni, vagy a használati eseteket más módon szemléltetni.
 
-\begin{table}[h]
-\centering
-\caption{Minta táblázat. A táblázat felirata a táblázat felett kell legyen!}
-\label{tab:minta}
-\begin{tabular}{l|c|c|}
-a & b & c \\
-\hline
-1 & 2 & 3 \\
-4 & 5 & 6 \\
-\hline
-\end{tabular}
-\end{table}
+% ...
 
-\Section{Ábrák}
+% \Section{Táblázatok}
 
-Ábrákat a \texttt{figure} környezettel lehet használni.
-A használatára egy példa \aref{fig:cimer}. ábrán látható.
-Az \texttt{includegraphics} parancsba 
-Az ábrák felirata az ábra alatt kell legyen.
-Az ábrák hivatkozásához használt nevet konvenció szerint \texttt{fig:}-el célszerű kezdeni.
+% Táblázatokhoz a \texttt{table} környezetet ajánlott használni.
+% Erre egy minta \aref{tab:minta}. táblázat.
+% A hivatkozáshoz az egyedi \texttt{label} értéke konvenció szerint \texttt{tab:} prefixszel kezdődik.
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.3]{images/me_logo.png}
-\caption{A Miskolci Egyetem címere.}
-\label{fig:cimer}
-\end{figure}
+% \begin{table}[h]
+% \centering
+% \caption{Minta táblázat. A táblázat felirata a táblázat felett kell legyen!}
+% \label{tab:minta}
+% \begin{tabular}{l|c|c|}
+% a & b & c \\
+% \hline
+% 1 & 2 & 3 \\
+% 4 & 5 & 6 \\
+% \hline
+% \end{tabular}
+% \end{table}
 
-\Section{További környezetek}
+% \Section{Ábrák}
 
-A matematikai témájú dolgozatokban szükség lehet tételek és bizonyításaik megadására.
-Ehhez szintén vannak készen elérhető környezetek.
+% Ábrákat a \texttt{figure} környezettel lehet használni.
+% A használatára egy példa \aref{fig:cimer}. ábrán látható.
+% Az \texttt{includegraphics} parancsba 
+% Az ábrák felirata az ábra alatt kell legyen.
+% Az ábrák hivatkozásához használt nevet konvenció szerint \texttt{fig:}-el célszerű kezdeni.
 
-\begin{definition}
-Ez egy definíció
-\end{definition}
+% \begin{figure}[h]
+% \centering
+% \includegraphics[scale=0.3]{images/me_logo.png}
+% \caption{A Miskolci Egyetem címere.}
+% \label{fig:cimer}
+% \end{figure}
 
-\begin{lemma}
-Ez egy lemma
-\end{lemma}
+% \Section{További környezetek}
 
-\begin{theorem}
-Ez egy tétel
-\end{theorem}
+% A matematikai témájú dolgozatokban szükség lehet tételek és bizonyításaik megadására.
+% Ehhez szintén vannak készen elérhető környezetek.
 
-\begin{proof}
-Ez egy bizonyítás
-\end{proof}
+% \begin{definition}
+% Ez egy definíció
+% \end{definition}
 
-\begin{corollary}
-Ez egy tétel
-\end{corollary}
+% \begin{lemma}
+% Ez egy lemma
+% \end{lemma}
 
-\begin{remark}
-Ez egy megjegyzés
-\end{remark}
+% \begin{theorem}
+% Ez egy tétel
+% \end{theorem}
 
-\begin{example}
-Ez egy példa
-\end{example}
+% \begin{proof}
+% Ez egy bizonyítás
+% \end{proof}
+
+% \begin{corollary}
+% Ez egy tétel
+% \end{corollary}
+
+% \begin{remark}
+% Ez egy megjegyzés
+% \end{remark}
+
+% \begin{example}
+% Ez egy példa
+% \end{example}
