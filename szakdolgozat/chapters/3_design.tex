@@ -12,6 +12,144 @@
 
 \Section{Követelmény specifikáció}
 
+\SubSection{Szerepkörök}
+
+\begin{itemize}
+    \item[--] látogató
+    \item[--] tanuló
+    \item[--] mentor
+    \item[--] adminisztrátor
+\end{itemize}
+
+\SubSection{Magas szintű követelmények}
+
+\subsubsection{Felhasználói fiók}
+
+\begin{itemize}
+    \item[--] A felhasználónak tudnia kell regisztrálni felhasználói fiókot.
+    \item[--] A felhasználónak tudnia kell bejelentkeznie a már létrehozott felhasználói fiókjába.
+    \item[--] A felhasználónak tudnia kell szerkesztenie a saját profilját.
+    \item[--] Az adminisztrátornak tudnia kell módosítani mások profilját és jogkörét módosítani.
+\end{itemize}
+
+\subsubsection{Feladat}
+
+\begin{itemize}
+    \item[--] A felhasználónak tudnia kell listáznia az elérhető feladatokat.
+    \item[--] A felhasználónak tudnia kell megtekinteni a kilistázott feladatokat.
+    \item[--] A tanulónak tudnia kell a kilistázott feladatokat megoldania a webalkalmazásban.
+    \item[--] Az alkalmazásnak tudnia kell a feladathoz tartozó automatizált teszteseteket lefuttatni.
+    \item[--] Az alkalmazásnak tudnia kell a feladathoz tartozó forráskódelemző modult lefuttatni.
+    \item[--] Az alkalmazásnak tudnia kell a feladathoz tartozó forráskód-reprezentáló modult lefuttatni.
+    \item[--] A tanulónak tudnia kell megtekinteni az előzőleg leadott megoldásait, és az ahhoz tartozó hozzászólásokat.
+    \item[--] A mentornak tudnia kell a tanulók megoldásait megtekinteni.
+    \item[--] A mentornak tudnia kell a tanulók megoldásaihoz hozzászólásokat írnia.
+    \item[--] A mentornak tudnia kell a korábbi hozzászólásokat megtekinteni.
+    \item[--] A tanulónak tudnia kell hozzászólást írni a saját megoldott feladataihoz.
+    \item[--] Az adminisztrátornak tudnia kell törölni hozzászólásokat.
+\end{itemize}
+
+\SubSection{Alacsony szintű követelmények}
+
+\subsubsection{Felhasználói fiók}
+
+\textbf{\textit{Regisztráció}}
+
+A webalkalmazás megnyitása után a látogatók regisztrálhatnak felhasználói fiókot. A fiók regisztrálásához  szükség van egy felhasználónév és jelszó párosra.
+
+A felhasználónév alfanumerikus karaktereket, és egyedülálló kötőjeleket tartalmazhat. A felhasználónév nem kezdődhet vagy végződhet kötőjellel. A felhasználónév legfeljebb 32 karakter hosszú lehet. A felhasználónév minden regisztrált felhasználónak egyedi.
+
+A jelszónak legalább 8 karakter hosszúnak kell lennie illetve legalább egy számot, egy kis- és nagybetűt kell tartalmaznia.
+
+A regisztráció után a felhasználó automatikusan kap egy egyedi azonosítót, illetve megkapja a Tanuló szerepkört, majd bejelentkeztetésre kerül, és átirányítódik az alkalmazás főoldalára.
+
+\textbf{\textit{Bejelentkezés}}
+
+A webalkalmazás megnyitása után a látogatók bejelentkezhetnek a már beregisztrált felhasználói fiókukba.
+
+A bejelentkezéshez szükség van a felhasználó és jelszó párosra. A hibás adatokra a felület figyelmeztet, de biztonsági szempont miatt a szerver csak egy általános hibaüzenetet ad vissza és nem közli a hiba pontos okát azaz, hogy melyik adat hibás vagy esetleg nem is létezik az a felhasználó.
+
+A bejelentkezés után a felhasználó átirányítódik az alkalmazás főoldalára.
+
+\textbf{\textit{Fiók szerkesztése}}
+
+A bejelentkezett felhasználók szerkeszthetik a saját fiókjukat. A fiók szerkesztése opció a felhasználóknak a navigációs sávról elérhető.
+
+Az adminisztátor szerepkörrel rendelkező felhasználók minden felhasználó fiókját szerkesztheti. 
+
+A fiók szerkesztése aloldalon a felhasználók megváltoztathatják a felhasználónevüket és a jelszavukat. Ezenkívül az adminisztrátorok az adott felhasználó szerepkörét is megváltoztathatják.
+
+A regisztrációnál leírt validációs folyamatoknak itt is le kell futnia.
+
+\subsubsection{Feladat}
+
+\textbf{\textit{Feladatok listázása}}
+
+A felhasználók listázhatják a webalkalmazásba feltöltött feladatokat. A listázott feladatok szűrhetők több szempont alapján is. Többek között nehézség (könnyű, közepes, nehéz), nyelv (C\#, JavaScript), és egyéni előrehaladás (nem próbált, próbált, teljesített feladat) szerint lehet szűrni.
+
+Listázás, és opcionálisan szűrés után a felhasználók a feladatok bővebb adatait megjeleníthetik egy előnézeti felületen, de rögtön a feladatmegoldó felületre is ugorhatnak a preferált programozási nyelvet kiválasztva.
+
+\textbf{\textit{Feladat megtekintése}}
+
+Az előnézeti felületen láthatják a felhasználók az adott feladat minden adatát, és felhasználó-specifikus adatokat is. Például a korábban leadott megoldásokat, vagy a feladat státuszát.
+
+Itt a felhasználók a preferált programozási nyelvet kiválasztva átléphetnek a feladatmegoldó felületre.
+
+\textbf{\textit{Feladat megoldása}}
+
+A feladatmegoldó felület fő eleme a kódszerkesztő ablak, amelyben betöltéskor a feladathoz tartozó kezdő forráskód szerepel vagy amennyiben már jártak ezen a felületen és módosítottak a kezdő forráskódon azon forráskódjuk szerepel itt. 
+
+Ezenkívül a felületen még szerepel a feladatleírás, a programfuttatás és tesztesetek eredményei, a forráskódelemző javaslatai illetve amennyiben már oldották meg ezt a feladatot abban az esetben a korábbi megoldásaik is szerepelnek itt.
+
+A felület 2 darab függőlegesen elválasztott panelra van felosztva, ahol jobb oldalon szerepel a kódszerkesztő, a bal oldalon pedig az előzőekben említett adatok.
+
+A felhasználók le tudják futtatni az általuk megírt forráskódot, mintha egy fejlesztői környezetben lennének. A "Futtatás" gombra kattintva elküldi a szervernek amely feldolgozza azt.
+
+A szerver a felhasználó forráskódját összepárosítja a megfelelő programozási nyelvvel és az ahhoz tartozó tesztesetekkel. Ezután lefordítja a kódot, lefuttatja a teszteseteket, ha ezek sikeresek voltak akkor pedig a forráskód elemzés és reprezentálás is lefuttatásra kerül.
+
+A szerver ezeket az adatokat visszaadja válaszban a felhasználónak és ez kliens oldalon megjelenítődik számára. Fordítási hiba esetén megkapja a felhasználó a pontos hibaüzenetet, sikeres fordítás esetén pedig a tesztesetek eredményeit is láthatja. A felhasználó látja a teszteseteket neveit, leírását, az eredményét, a hibaüzenetet és a konzolra kiíratott üzeneteket (amiket hibakereséshez tud felhasználni).
+
+Ha minden teszteset sikeresen lefutott akkor a felhasználó látja a forráskódelemző modul eredményét azaz az automatizált javaslatokat. Ezeket később a hozzászólások felületen is megtekintheti.
+
+A forráskód-reprezentáló modul eredményét nem kapja meg a felhasználó, ez letárolódik az adatbázisban, viszont ez csak a mentorok számára látható.
+
+A "Beadás" gombra kattintva a feladatot leadhatja a felhasználó, viszont ez csak akkor lehetséges ha minden teszteset lefutott hiba nélkül. Ekkor a mentorok számára is láthatóvá válik a megoldás, akik tudnak hozzászólásokat fűzni a megoldásokhoz. Illetve a felhasználó számára is átvált megoldott státuszba, így könnyen nyomonkövethető, hogy melyik feladattal végzett már. Beadás után akár megoldhatja újra a feladatot, új megoldást is adhat be.
+
+\textbf{\textit{Teszteset futtató modul}}
+
+\begin{itemize}
+    \item[--] Lefordítja a felhasználó által beadott forráskódot és a feladathoz tartozó teszteseteket.
+    \item[--] Lefuttatja a teszteseteket.
+    \item[--] Feldolgozva visszaadja az eredményeket.
+\end{itemize}
+
+\textbf{\textit{Forráskód elemző modul}}
+
+\begin{itemize}
+    \item[--] Elemzi a felhasználó által beadott forráskódot. Automatikusan felismeri a hibákat, javítható részeket és ezekre javaslatot ad.
+    \item[--] A javaslatok szövegeit egyedi azonosítókulcsuk alapján az adatbázisból nyeri ki.
+    \item[--] Minden feladathoz és azonbelül programozási nyelvhez külön elemző szubmodul tartozik.
+\end{itemize}
+
+\textbf{\textit{Forráskód-reprezentáló modul}}
+
+\begin{itemize}
+    \item[--] Normalizálja a felhasználó által beadott forráskódot, egy standardizált, egységesített alakra hozza.
+    \item[--] A normalizált alak segítségével megvizsgálhatóak a hasonló programkódok, így lehet csoportosítani őket. A csoportosított kódok segítségével nem kell a mentoroknak a nagyon hasonló kódokat többször értékelni hanem egyszerre letudhatják, amivel időt spórolhatnak meg.
+\end{itemize}
+
+\textbf{\textit{Korábbi megoldások megtekintése}}
+
+A felhasználók megtekinthetik a korábban leadott megoldásaikat, és az ahhoz tartozó hozzászólásokat.
+
+A megoldások programozási nyelv szerint elkülönülnek, és alapértelmezetten csak az legutóbb leadott megoldásuk jelenik meg, de böngészhetnek a korábbi megoldásaik között is.
+
+A mentorok és a felhasználók egyaránt hozzászólhatnak a megoldásokhoz. A tanulók csak a saját megoldásait látják, viszont a mentorok egy külön felületen feladatonként és nyelvenként az összes megoldás között böngészhetnek, illetve megtekinthetik a forráskód reprezentációkat is, és csoportosíthatják eszerint.
+
+Az adminisztrátorok törölhetik a felhasználók hozzászólásait.
+
+
+
 % Külön szakaszban érdemes részletesen kitérni az elkészítendő alkalmazással kapcsolatos követelményekre.
 % Ehhez tartozhatnak forgatókönyvek (\textit{scenario}-k).
 % A szemléletesség kedvéért lehet hozzájuk képernyőkép vázlatokat is készíteni, vagy a használati eseteket más módon szemléltetni.
